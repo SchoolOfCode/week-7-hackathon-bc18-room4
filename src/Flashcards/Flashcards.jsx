@@ -1,9 +1,13 @@
 import Flashcard from "./Flashcard/Flashcard";
+import Form from "../Form/Form";
 import styles from "./Flashcards.module.css";
 import { useState } from "react";
 
+import { useState } from "react";
+
 function Flashcards() {
-    const data = [
+
+  let [data, setData] = useState([
         {
             question: "What is react?",
             answer: "It is a Front end Library",
@@ -41,9 +45,22 @@ function Flashcards() {
             question: "How do you share state between React components?",
             answer: "Lift the state to a common parent and pass it via props.",
         },
-    ];
+    ]);
 
+  function handleFormData(formData) {
+    let newData = [...data];
+    newData.push(formData);
+    setData(newData);
+  }
 
+  return (
+    <div className={styles.container}>
+      <Form callback={handleFormData} />
+      {data.slice(0, 3).map((item, index) => (
+        <Flashcard key={index} question={item.question} answer={item.answer} />
+      ))}
+    </div>
+  );
 
     const [displayedQuestions, setDisplayedQuestions] = useState(data.slice(0, 3)); //will select first 3 questions
     
@@ -62,8 +79,6 @@ function Flashcards() {
             <button className={styles.btn} onClick={shuffleQuestions}>Shuffle Questions</button>
         </div>
       );
-  
-
 }
 
 export default Flashcards;
