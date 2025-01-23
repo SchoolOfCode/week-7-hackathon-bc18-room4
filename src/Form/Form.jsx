@@ -1,31 +1,43 @@
-import styles from './Form.module.css';
+import { useState } from "react";
+import styles from "./Form.module.css";
 
-function Form() {
+function Form({ callback }) {
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
 
-    function handleSubmit(event: React.FormEvent) {
-        event.preventDefault();
-        console.log("Form submitted");
-       const formValues = {
-        question: questionRef.current.value
-        answer: nameRef.current.value
-       }
-        console.log(data.get('question'));
-        console.log(data.get('answer'));
-    }
+  function handleButton(event) {
+    let data = {};
+    event.preventDefault();
+    data = {
+      question,
+      answer,
+    };
+    callback(data);
+  }
 
   return (
     <div className={styles.container}>
-    <form>
-      <label>
-        Question:
-        <input type="text" question="question" />
-      </label>
-      <label>
-        Answer:
-        <input type="text" name="answer" />
-      </label>
-      <button type="submit" onClick={handleSubmit} >Submit</button>
-    </form>
+      <form onSubmit={handleButton}>
+        <label>
+          Question:
+          <input
+            type="text"
+            value={question}
+            name="question"
+            onChange={(e) => setQuestion(e.target.value)}
+          />
+        </label>
+        <label>
+          Answer:
+          <input
+            type="text"
+            value={answer}
+            name="answer"
+            onChange={(e) => setAnswer(e.target.value)}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }

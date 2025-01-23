@@ -1,8 +1,11 @@
 import Flashcard from "./Flashcard/Flashcard";
+import Form from "../Form/Form";
 import styles from "./Flashcards.module.css";
 
+import { useState } from "react";
+
 function Flashcards() {
-  const data = [
+  let [data, setData] = useState([
     {
       question: "What is react?",
       answer: "It is a Front end Library",
@@ -16,13 +19,22 @@ function Flashcards() {
       question: "How do you create a React component?",
       answer: "function MyComponent() { return <h1>Hello, world!</h1>; }",
     },
-  ];
+  ]);
+
+  console.log(data);
+
+  function handleFormData(formData) {
+    let newData = [...data];
+    newData.push(formData);
+    setData(newData);
+  }
 
   return (
     <div className={styles.container}>
-      <Flashcard question={data[0].question} answer={data[0].answer} />
-      <Flashcard question={data[1].question} answer={data[1].answer} />
-      <Flashcard question={data[2].question} answer={data[2].answer} />
+      <Form callback={handleFormData} />
+      {data.slice(0, 3).map((item, index) => (
+        <Flashcard key={index} question={item.question} answer={item.answer} />
+      ))}
     </div>
   );
 }
