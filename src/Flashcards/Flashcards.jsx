@@ -1,6 +1,6 @@
-import Flashcard from "./Flashcard/Flashcard";
-import styles from "./Flashcards.module.css";
-import { useState } from "react";
+import Flashcard from "./Flashcard/Flashcard"
+import styles from "./Flashcards.module.css"
+import {useState} from "react"
 
 function Flashcards() {
     const data = [
@@ -41,33 +41,37 @@ function Flashcards() {
             question: "How do you share state between React components?",
             answer: "Lift the state to a common parent and pass it via props.",
         },
-    ];
+    ]
 
+    const [displayedQuestions, setDisplayedQuestions] = useState(data.slice(0, 3)) //will select first 3 questions
 
-
-    const [displayedQuestions, setDisplayedQuestions] = useState(data.slice(0, 3)); //will select first 3 questions
-    
-    function shuffleQuestions() {   //shuffles data randomly without modifying original array
-        const shuffled = [...data].sort(() => Math.random() - 0.5);
-        setDisplayedQuestions(shuffled.slice(0, 3));
+    function shuffleQuestions() {
+        //shuffles data randomly without modifying original array
+        const shuffled = [...data].sort(() => Math.random() - 0.5)
+        setDisplayedQuestions(shuffled.slice(0, 3))
     }
 
-    return ( 
+    return (
         <div className={styles.outercontainer}>
-        <div className={styles.inputarea}></div>
-        <div className={styles.container}>
-          {displayedQuestions.map((item, index) => (
-            <Flashcard key={index} question={item.question} answer={item.answer} />
-          ))}
-            <button className={styles.btn} onClick={shuffleQuestions}>Shuffle Questions</button>
+            <div className={styles.inputarea}>
+                <div className={styles.container}>
+                    {displayedQuestions.map((item, index) => (
+                        <Flashcard
+                            key={index}
+                            question={item.question}
+                            answer={item.answer}
+                        />
+                    ))}
+                    <button className={styles.btn} onClick={shuffleQuestions}>
+                        Shuffle Questions
+                    </button>
+                </div>
+            </div>
         </div>
-      );
-  
+    )
+};
+export default Flashcards
 
-}
-
-export default Flashcards;
-  
 // return (
 //     <div className={styles.container}>
 //       <Flashcard question={data[0].question} answer={data[0].answer} />
