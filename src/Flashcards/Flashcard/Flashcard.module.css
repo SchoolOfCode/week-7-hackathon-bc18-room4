@@ -1,0 +1,11 @@
+.container {
+  border-radius: 10px;
+  height: 150px;
+  width: 250px;
+  background-color: #323949;
+}
+
+.close_btn {
+  /* align-self: flex-end; */
+  padding-right: 10px;
+}
