@@ -9,9 +9,6 @@
   gap: clamp(20px, 5vw, 50px);
   overflow-y: auto;
 }
-.inputarea {
-  height: 150px;
-}
 
 .container {
   background-color: #232731;
@@ -31,5 +28,12 @@
 }
 
 .btn {
-  
+  background-color: #06b1df;
+  color: white;
+  grid-row: 2; /* Place in the second row */
+  grid-column: 2; /* Place in the middle cell */
+}
+
+.question_container {
+  margin-top: 40px;
 }
