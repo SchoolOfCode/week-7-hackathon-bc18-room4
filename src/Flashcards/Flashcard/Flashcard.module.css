@@ -19,6 +19,10 @@
   margin-top: 0;
 }
 
+.answer {
+  background-color: #06b1df;
+}
+
 .close_btn {
   /* align-self: flex-end; */
   font-size: clamp(1rem, 3vw, 2rem); /* Scales size dynamically */
