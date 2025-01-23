@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 
 function Header() {
     return <div className= { styles.header }>
-        <img src={reactLogo} className={styles.logo} />
+        <img src={reactLogo} alt='react icon' className={styles.logo} />
         <h1> React Flashcards </h1>
         <p>🧠 Expand Your React Knowledge, One Flashcard at a Time! 🐌 </p>
     </div>
