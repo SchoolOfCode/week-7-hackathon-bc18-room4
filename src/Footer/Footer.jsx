@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 function Footer() {
   return (
     <div className={styles.container}>
-      <p>Built with React</p>
+      <p className={styles.text}>Built with React</p>
       <img className={styles.logo} src={reactLogo} />
     </div>
   );

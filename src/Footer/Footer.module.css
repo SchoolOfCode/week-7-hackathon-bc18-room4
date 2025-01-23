@@ -1,10 +1,11 @@
 .container {
   width: 100vw;
   background-color: #16181e;
-  position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
+  position: relative;
+  height: 100px;
   flex-direction: row;
   justify-content: center;
 }
@@ -13,5 +14,9 @@
   margin-left: 10px;
   height: 25px;
   width: 25px;
+  align-self: center;
+}
+
+.text {
   align-self: center;
 }

@@ -43,6 +43,8 @@ function Flashcards() {
         },
     ];
 
+
+
     const [displayedQuestions, setDisplayedQuestions] = useState(data.slice(0, 3)); //will select first 3 questions
     
     function shuffleQuestions() {   //shuffles data randomly without modifying original array
@@ -51,6 +53,8 @@ function Flashcards() {
     }
 
     return ( 
+        <div className={styles.outercontainer}>
+        <div className={styles.inputarea}></div>
         <div className={styles.container}>
           {displayedQuestions.map((item, index) => (
             <Flashcard key={index} question={item.question} answer={item.answer} />
@@ -59,6 +63,7 @@ function Flashcards() {
         </div>
       );
   
+
 }
 
 export default Flashcards;

@@ -1,16 +1,28 @@
 .header {
   background-color: #16181e;
   width: 100vw;
+  height: 360px;
   display: flex;
   flex-direction: column;
-  /* position: relative; */
+  position: relative;
   top: 0;
   left: 0;
   padding: 0;
   margin: 0;
 }
 
+.heading {
+  margin: 30px;
+}
+
+.slogan {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
 .logo {
+  margin-top: 10px;
   height: 6em;
   padding: 1.5em;
   will-change: filter;

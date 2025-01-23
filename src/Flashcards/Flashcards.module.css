@@ -1,11 +1,33 @@
+.outercontainer {
+  display: grid;
+  grid-template-rows: 1fr fr;
+  min-height: calc(93vh - 324.91px - 56px);
+  background-color: #232731;
+  height: auto;
+  transform: scale(calc(100vw / 1920));
+  transform-origin: top center;
+  gap: clamp(20px, 5vw, 50px);
+  overflow-y: auto;
+}
+.inputarea {
+  height: 150px;
+}
+
 .container {
   background-color: #232731;
   align-items: center;
   justify-content: space-evenly;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 120px;
   width: 100vw;
+  height: 80%;
+  place-items: center;
+}
+
+@media (max-width: 1024px) {
+  .outercontainer {
+    transform: scale(0.9);
+  }
 }
 
 .btn {
