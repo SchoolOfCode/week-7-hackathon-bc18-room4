@@ -47,6 +47,7 @@ function Flashcards() {
   const [displayedQuestions, setDisplayedQuestions] = useState(
     data.slice(0, 3)
   ); // Initialize with first 3 questions
+  const [resetTrigger, setResetTrigger] = useState(false);
 
   function handleFormData(formData) {
     const newData = [...data, formData];
@@ -56,17 +57,21 @@ function Flashcards() {
   function shuffleQuestions(dataArray) {
     const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
     setDisplayedQuestions(shuffled.slice(0, 3));
+    setResetTrigger((prev) => !prev);
   }
 
   return (
     <div className={styles.outercontainer}>
-      <Form callback={handleFormData} />
+      <div className={styles.question_container}>
+        <Form callback={handleFormData} />
+      </div>
       <div className={styles.container}>
         {displayedQuestions.map((item, index) => (
           <Flashcard
             key={index}
             question={item.question}
             answer={item.answer}
+            resetTrigger={resetTrigger}
           />
         ))}
         <button className={styles.btn} onClick={() => shuffleQuestions(data)}>

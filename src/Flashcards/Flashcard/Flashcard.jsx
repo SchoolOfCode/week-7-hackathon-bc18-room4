@@ -1,11 +1,17 @@
 import { useState } from "react";
 import styles from "./Flashcard.module.css";
 
-function Flashcard({ question, answer }) {
+function Flashcard({ question, answer, resetTrigger }) {
   const [showAnswer, setShowAnswer] = useState(false); //state
+  const [currentResetTrigger, setCurrentResetTrigger] = useState(resetTrigger);
 
   function handleClick() {
     setShowAnswer(!showAnswer);
+  }
+
+  if (resetTrigger !== currentResetTrigger) {
+    setShowAnswer(false);
+    setCurrentResetTrigger(resetTrigger);
   }
 
   return (

@@ -18,25 +18,29 @@ function Form({ callback }) {
   return (
     <div className={styles.container}>
       <form onSubmit={handleButton}>
-        <label>
+        <label className={styles.label}>
           Question:
           <input
+            className={styles.input}
             type="text"
             value={question}
             name="question"
             onChange={(e) => setQuestion(e.target.value)}
           />
         </label>
-        <label>
+        <label className={styles.label}>
           Answer:
           <input
+            className={styles.input}
             type="text"
             value={answer}
             name="answer"
             onChange={(e) => setAnswer(e.target.value)}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button className={styles.button} type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
