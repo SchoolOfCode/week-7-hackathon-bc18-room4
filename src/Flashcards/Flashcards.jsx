@@ -19,10 +19,13 @@ function Flashcards() {
   ];
 
   return (
-    <div className={styles.container}>
-      <Flashcard question={data[0].question} answer={data[0].answer} />
-      <Flashcard question={data[1].question} answer={data[1].answer} />
-      <Flashcard question={data[2].question} answer={data[2].answer} />
+    <div className={styles.outercontainer}>
+      <div className={styles.inputarea}></div>
+      <div className={styles.container}>
+        <Flashcard question={data[0].question} answer={data[0].answer} />
+        <Flashcard question={data[1].question} answer={data[1].answer} />
+        <Flashcard question={data[2].question} answer={data[2].answer} />
+      </div>
     </div>
   );
 }
