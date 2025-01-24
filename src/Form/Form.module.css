@@ -1,6 +1,7 @@
 .container {
   background-color: #232731;
   width: 100vw;
+  margin-top: 20px;
 }
 
 .input {

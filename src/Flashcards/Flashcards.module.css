@@ -1,12 +1,12 @@
 .outercontainer {
   display: grid;
-  grid-template-rows: 1fr fr;
+  /* grid-template-rows: 0.4fr fr; */
   min-height: calc(93vh - 324.91px - 56px);
   background-color: #232731;
   height: auto;
   transform: scale(calc(100vw / 1920));
   transform-origin: top center;
-  gap: clamp(20px, 5vw, 50px);
+  gap: 0;
   overflow-y: auto;
 }
 
@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100vw;
-  height: 80%;
+  height: 100%;
   place-items: center;
 }
 
@@ -30,10 +30,16 @@
 .btn {
   background-color: #06b1df;
   color: white;
+  font-size: 24px;
+  height: 70px;
+  width: 300px;
+  margin-bottom: 20px;
+  align-self: center;
   grid-row: 2; /* Place in the second row */
   grid-column: 2; /* Place in the middle cell */
 }
 
 .question_container {
-  margin-top: 40px;
+  margin-top: clamp(10px, 5vw, 35px);
+  max-height: 100px;
 }
