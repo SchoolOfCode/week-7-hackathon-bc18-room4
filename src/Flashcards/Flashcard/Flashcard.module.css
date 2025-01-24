@@ -46,7 +46,9 @@
   ); /* Dynamically scales the content text */
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 @media (max-width: 768px) {
