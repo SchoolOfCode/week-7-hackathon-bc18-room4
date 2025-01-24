@@ -23,9 +23,19 @@
   background-color: #06b1df;
   color: white;
   scale: 1.5;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  outline: none;
 }
 
 .label {
   font-size: xx-large;
   padding-right: 100px;
+}
+
+.button:hover {
+  background-color: #016093;
+}
+.button:focus {
+  outline: none;
 }

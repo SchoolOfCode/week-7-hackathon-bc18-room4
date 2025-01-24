@@ -37,9 +37,19 @@
   align-self: center;
   grid-row: 2; /* Place in the second row */
   grid-column: 2; /* Place in the middle cell */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  outline: none;
 }
 
 .question_container {
   margin-top: clamp(10px, 5vw, 35px);
   max-height: 100px;
+}
+
+.btn:hover {
+  background-color: #005c8d;
+}
+.btn:focus {
+  outline: none;
 }
